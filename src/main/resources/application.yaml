@@ -1,0 +1,36 @@
+server:
+  port: 8088
+spring:
+  security:
+    user:
+      name: admin
+      password: 123456
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            client-id: Ov23licXDB52OHecNHa6
+#            client-secret: 7efe19fc106d12f946fbaa3812456d1876db9c31
+#            redirect-uri: "http://localhost:8088/login/oauth2/code/github"
+#            redirect-uri: "http://localhost:8088/login/oauth2/code/github"
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.204.133:3306/security-demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+knife4j:
+  enable: true
+  openapi:
+    title: SpringSecurityDemo
+    description: SpringSecurityDemo
+    version: 1.0.0
+    group:
+      default:
+        group-name: SpringSecurityDemo
+        api-rule: package
+        api-rule-resources:
+          - com.alfo.securitydemo.controller
+github:
+  client:
+    id: Ov23li8ZrMJSNGYuBeB6
+    secret: 82d9e14c82dc0d42c2f565ba9ca500bd28ae809d

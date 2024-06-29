@@ -1,0 +1,60 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">-->
+<!--<head>-->
+<!--    <title>Spring Security - OAuth 2.0 Login</title>-->
+<!--    <meta charset="utf-8" />-->
+<!--</head>-->
+<!--<body>-->
+<!--<div style="float: right" th:fragment="logout" sec:authorize="isAuthenticated()">-->
+<!--    <div style="float:left">-->
+<!--        <span style="font-weight:bold">User: </span><span sec:authentication="name"></span>-->
+<!--    </div>-->
+<!--    <div style="float:none">&nbsp;</div>-->
+<!--    <div style="float:right">-->
+<!--        <form action="#" th:action="@{/logout}" method="post">-->
+<!--            <input type="submit" value="Logout" />-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<h1>OAuth 2.0 Login with Spring Security</h1>-->
+<!--<div>-->
+<!--    You are successfully logged in <span style="font-weight:bold" th:text="${userName}"></span>-->
+<!--    via the OAuth 2.0 Client <span style="font-weight:bold" th:text="${clientName}"></span>-->
+<!--</div>-->
+<!--<div>&nbsp;</div>-->
+<!--<div>-->
+<!--    <span style="font-weight:bold">User Attributes:</span>-->
+<!--    <ul>-->
+<!--        <li th:each="userAttribute : ${userAttributes}">-->
+<!--            <span style="font-weight:bold" th:text="${userAttribute.key}"></span>: <span th:text="${userAttribute.value}"></span>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OAuth2 Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<a id="login">Login with GitHub</a>
+
+<script>
+    const client_id = 'Ov23li8ZrMJSNGYuBeB6';
+
+    const authorize_uri = 'https://github.com/login/oauth/authorize';
+    const redirect_uri = 'http://localhost:8088/oauth/redirect';
+
+    const link = document.getElementById('login');
+    link.href = `${authorize_uri}?client_id=${client_id}&redirect_uri=${redirect_uri}`;
+</script>
+
+</body>
+
+</html>
